@@ -28,4 +28,8 @@ RUN tar zxvf Open-COBOL-ESQL-1.2.tar.gz &&\
     ./configure --prefix=/usr/ &&\
     make install &&\
     cd / &&\
-    rm -rf Open-COBOL-ESQL-1.2
+    rm -rf Open-COBOL-ESQL-1.2 Open-COBOL-ESQL-1.2.tar.gz
+
+WORKDIR /oscobol
+
+ENTRYPOINT ["/bin/bash"]
