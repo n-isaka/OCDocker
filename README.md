@@ -14,11 +14,10 @@ sample cobol run on docker image.
 ```
 mkdir src
 wget https://github.com/n-isaka/OCDocker/blob/master/HELLO.cbl
-wget https://github.com/n-isaka/OCDocker/blob/master/HELLO.cbl
 mv HELLO.cbl src/
 docker pull norisaka/opensource_cobol `
 PWD=`pwd`
-docker run --rm -it -v ${PWD}/src:/oscobol/src:ro norisaka/opensource_cobol
+docker run --rm -it -v ${PWD}/src:/oscobol/src:ro --name oscobol norisaka/opensource_cobol
 ```
 
 in docker container
@@ -30,3 +29,8 @@ cobcrun HELLO
 
 display your console `HELLO WORLD!`
 
+When you want stop container, follow command:
+
+```
+docker stop oscobol
+```
